@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class AsteroidTrail : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject trail;
+    private Rigidbody2D rb;
+    private void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if(rb.velocity.magnitude == 0)
+        {
+            trail.SetActive(false);
+        }
+        else
+        {
+            trail.SetActive(true);
+            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, -rb.velocity.normalized);
+            rotation *= Quaternion.Euler(0f, 0f, 90f);
+            trail.transform.rotation = rotation;
+        }
     }
 }
