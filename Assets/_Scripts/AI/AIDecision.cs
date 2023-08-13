@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AIDecision : ScriptableObject
 {
-    public virtual bool Decide(AIStateController aIStateController)
+    public virtual bool Decide(GameObject go)
     {
         return false;
     }

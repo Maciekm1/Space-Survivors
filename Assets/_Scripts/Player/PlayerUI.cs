@@ -56,12 +56,12 @@ public class PlayerUI : MonoBehaviour
 
     private void UpdateHealthBar()
     {
-        healthBar.fillAmount = Mathf.Lerp(0, 1, playerHealth.GetPlayerHealth() / playerHealth.GetPlayerHealthMax());
+        healthBar.fillAmount = Mathf.Lerp(0, 1, playerHealth.GetHealthCurrent() / playerHealth.GetHealthMax());
     }
 
     private void UpdateShieldBar()
     {
-        shieldBar.fillAmount = Mathf.Lerp(0, 1, playerHealth.GetPlayerShield() / playerHealth.GetPlayerShieldMax());
+        shieldBar.fillAmount = Mathf.Lerp(0, 1, playerHealth.GetShieldCurrent() / playerHealth.GetShieldMax());
     }
 
     private void UpdateXpBar()

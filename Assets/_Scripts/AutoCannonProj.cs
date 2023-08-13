@@ -4,57 +4,15 @@ using UnityEngine;
 
 public class AutoCannonProj : Projectile
 {
-    private Vector2 shotStrength;
-    private float lifetimeEnd;
+    [SerializeField] protected PlayerWeapon weapon;
+    [Range(0, 1)][SerializeField] protected float playerVelocityMultiplier;
 
-    private bool coroutineStarted = false;
-
-    private void OnEnable()
+    protected void OnEnable()
     {
-        coroutineStarted = false;
-        spriteRenderer.enabled = true;
+        Shoot();
         // In the direction of Y-axis of proj
-        Vector2 shotStrenghtNoPlayer = transform.up * projectileSpeed;
-
         // speed affected by player velocity, can't be lower than shotStrengthNoPlayer (i.e base speed)
-        shotStrength = shotStrenghtNoPlayer * Mathf.Clamp(PlayerController.Instance.Rb.velocity.magnitude * playerVelocityMultiplier, 1f, PlayerController.Instance.Rb.velocity.magnitude * playerVelocityMultiplier);
-        rb.AddForce(shotStrength, ForceMode2D.Impulse);
-
-        lifetimeEnd = Time.time + projectileLifeTime;
-    }
-
-    private void OnDisable()
-    {
-        transform.SetPositionAndRotation(Vector2.zero, Quaternion.identity);
-        rb.velocity = Vector2.zero;
-    }
-
-    private void Update()
-    {
-        if(Time.time > lifetimeEnd)
-        {
-            if (usesParticleExplosion) 
-            {
-                if(!coroutineStarted)
-                {
-                    StartCoroutine(DeactivateObject());
-                }
-            }
-            else
-            {
-                gameObject.SetActive(false);
-            }
-        }
-    }
-
-    private IEnumerator DeactivateObject()
-    {
-        coroutineStarted = true;
-        rb.velocity = Vector2.zero;
-        spriteRenderer.enabled = false;
-        particleSystemExplosion.Play();
-        yield return new WaitForSeconds(particleSystemExplosion.main.duration);
-        gameObject.SetActive(false);
-
+        Vector2 shotStrength = transform.up * projectileSpeed * Mathf.Clamp(PlayerController.Instance.Rb.velocity.magnitude * playerVelocityMultiplier, 1f, PlayerController.Instance.Rb.velocity.magnitude * playerVelocityMultiplier);
+        Rb.AddForce(shotStrength, ForceMode2D.Impulse);
     }
 }

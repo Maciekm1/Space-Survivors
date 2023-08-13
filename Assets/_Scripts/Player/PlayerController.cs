@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using DG.Tweening.Core.Easing;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public PlayerLevel PlayerLevel { get; private set; }
     public PlayerDash PlayerDash { get; private set; }
     public Rigidbody2D Rb { get; private set; }
+    [field:SerializeField]public FlashEffect Flash { get; private set; }
+
     [SerializeField] CinemachineVirtualCamera cam;
     [SerializeField] private Collider2D col;
 
@@ -73,6 +76,24 @@ public class PlayerController : MonoBehaviour
         // Works well with moveSpeed:4, turnspeed:0.2, drag:0.95
         Rb.AddForce(transform.up * inputVector.y * moveSpeed);
         Rb.AddTorque(-inputVector.x * turnSpeed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Projectile proj;
+        if (collision.TryGetComponent<Projectile>(out proj))
+        {
+            if (!proj.playerDamage)
+            {
+                PlayerHealth.TakeDamage(20);
+
+                //Knockback + visual
+                Rb.AddForce(proj.Rb.velocity * proj.ProjectileKnockback, ForceMode2D.Impulse);
+                Flash.StartFlash(.1f, 1);
+
+                proj.DestroyProjectile();
+            }
+        }
     }
 
     public bool IsMoving()

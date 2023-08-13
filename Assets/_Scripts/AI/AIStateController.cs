@@ -5,6 +5,7 @@ using UnityEngine;
 public class AIStateController : MonoBehaviour
 {
     [SerializeField] private AIState currentState;
+    [SerializeField] private AIState remainState;
 
     private void Update()
     {
@@ -17,9 +18,14 @@ public class AIStateController : MonoBehaviour
         DoActionsFixed();
     }
 
+    public AIState GetCurrentState()
+    {
+        return currentState;
+    }
+
     private void changeState(AIState newState)
     {
-        if(currentState != newState)
+        if(currentState != newState && newState != remainState)
         {
             currentState = newState;
         }
@@ -29,7 +35,7 @@ public class AIStateController : MonoBehaviour
     {
         foreach(AIAction a in currentState.actions)
         {
-            a.Do(this);
+            a.Do(this.gameObject);
         }
     }
 
@@ -37,7 +43,7 @@ public class AIStateController : MonoBehaviour
     {
         foreach (AIAction a in currentState.actions)
         {
-            a.DoFixed(this);
+            a.DoFixed(this.gameObject);
         }
     }
 
@@ -45,7 +51,7 @@ public class AIStateController : MonoBehaviour
     {
         foreach(AITransition t in currentState.transitions)
         {
-            if (t.decision.Decide(this))
+            if (t.decision.Decide(this.gameObject))
             {
                 changeState(t.trueState);
             }

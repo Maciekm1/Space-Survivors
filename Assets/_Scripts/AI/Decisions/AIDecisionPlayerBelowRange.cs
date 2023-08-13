@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-[CreateAssetMenu(menuName ="AI/AIDecision/PlayerInRange")]
-public class AIDecisionPlayerInRange : AIDecision
+[CreateAssetMenu(menuName = "AI/AIDecision/PlayerBelowRange")]
+public class AIDecisionPlayerBelowRange : AIDecision
 {
-    [SerializeField] private float range;
+    public float range;
     public override bool Decide(GameObject go)
     {
         Vector2 towardsPlayer = PlayerController.Instance.transform.position - go.transform.position;

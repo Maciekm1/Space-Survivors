@@ -32,10 +32,6 @@ public class PlayerDash : MonoBehaviour
 
     private void PlayerInput_OnDashStarted()
     {
-        //TEMP
-        PlayerController.Instance.PlayerHealth.PlayerLoseHealth(20);
-        PlayerController.Instance.PlayerHealth.PlayerTakeDamage(20);
-        PlayerController.Instance.PlayerLevel.PlayerGainXP(3);
 
         if(dashCharges > 0)
         {

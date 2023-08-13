@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName ="AI/AIAction/AIActionIdle")]
-public class AIActionIdle : AIAction
+[CreateAssetMenu(menuName = "AI/AIAction/AIActionDeploy")]
+public class AIActionDeploy : AIAction
 {
     public override void Do(GameObject go)
     {

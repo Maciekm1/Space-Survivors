@@ -267,13 +267,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc85a4f5414cd1b41929c56c65568ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileDamage: 5
+  projectileDamage: 1
   projectileSpeed: 10
   projectileLifeTime: 1
-  playerVelocityMultiplier: 0.4
-  weapon: {fileID: 8297967170243566199, guid: c77aa457ef7b038498da6d1194546f6f, type: 3}
+  <ProjectileKnockback>k__BackingField: 0.2
+  <playerDamage>k__BackingField: 1
   usesParticleExplosion: 1
   particleSystemExplosion: {fileID: 6267290296089191091}
+  weapon: {fileID: 8297967170243566199, guid: c77aa457ef7b038498da6d1194546f6f, type: 3}
+  playerVelocityMultiplier: 0.4
 --- !u!1001 &3013274166851396830
 PrefabInstance:
   m_ObjectHideFlags: 0
