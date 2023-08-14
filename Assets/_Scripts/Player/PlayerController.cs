@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
         Enemy enemy;
         if (collision.collider.TryGetComponent<Enemy>(out enemy))
         {
-            PlayerHealth.TakeDamage(10f);
+            PlayerHealth.TakeDamage(enemy.Damage);
 
             //Knockback + visual
             Rb.AddForce(enemy.Rb.velocity * enemy.KnockbackForce, ForceMode2D.Impulse);

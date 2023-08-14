@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fe64de6d39ef154b8761271f6f0b606, type: 3}
+  m_Name: ChaseRunTransitionMoth
+  m_EditorClassIdentifier: 
+  actions: []
+  transitions:
+  - decision: {fileID: 11400000, guid: 158d7cbdedee23d4a8112ed58f7e9be5, type: 2}
+    trueState: {fileID: 11400000, guid: 036b6ebac53bb3040bf9442a29a4b830, type: 2}
+    falseState: {fileID: 11400000, guid: 856ae81c9bbb4e446abab5504d7cb8f9, type: 2}
+  - decision: {fileID: 11400000, guid: 6b7592c015505f848a1dd5f6df5e4412, type: 2}
+    trueState: {fileID: 11400000, guid: 9b5385ceee7164747b6815a16ec98beb, type: 2}
+    falseState: {fileID: 11400000, guid: 856ae81c9bbb4e446abab5504d7cb8f9, type: 2}

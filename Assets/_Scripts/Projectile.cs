@@ -7,7 +7,7 @@ using UnityEngine;
 public abstract class Projectile : MonoBehaviour
 {
     [field:SerializeField] public float ProjectileDamage { get; private set; }
-    [SerializeField] protected float projectileSpeed;
+    [field:SerializeField] public float projectileSpeed { get; private set; }
     [SerializeField] protected float projectileLifeTime;
     [field:SerializeField] public float ProjectileKnockback { get; private set; }
     [field:SerializeField] public bool playerDamage { get; private set; }
@@ -43,7 +43,7 @@ public abstract class Projectile : MonoBehaviour
         }
     }
 
-    protected virtual void Shoot()
+    public virtual void Shoot()
     {
         coroutineStarted = false;
         spriteRenderer.enabled = true;

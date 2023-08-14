@@ -87,7 +87,7 @@ public class Health : MonoBehaviour
 
     public virtual void GainHealth(float amount)
     {
-        shieldCurrent += amount;
+        healthCurrent += amount;
         OnHealthGain?.Invoke();
     }
 

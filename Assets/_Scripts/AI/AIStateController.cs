@@ -23,6 +23,11 @@ public class AIStateController : MonoBehaviour
         return currentState;
     }
 
+    public void SetState(AIState newState)
+    {
+        changeState(newState);
+    }
+
     private void changeState(AIState newState)
     {
         if(currentState != newState && newState != remainState)

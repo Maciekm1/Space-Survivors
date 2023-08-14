@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 547982750289805958}
   - component: {fileID: 646994362072495120}
   m_Layer: 0
-  m_Name: AsteroidMini
+  m_Name: AsteroidMiniProj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bbf283627c45940b14e63e1bf215ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileDamage: 1
-  projectileSpeed: 3
+  <ProjectileDamage>k__BackingField: 20
+  <projectileSpeed>k__BackingField: 3
   projectileLifeTime: 5
   <ProjectileKnockback>k__BackingField: 0.2
   <playerDamage>k__BackingField: 0

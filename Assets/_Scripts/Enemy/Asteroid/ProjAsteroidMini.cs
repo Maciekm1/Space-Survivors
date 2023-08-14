@@ -34,11 +34,10 @@ public class ProjAsteroidMini : Projectile
         }
     }
 
-    protected override void Shoot()
+    public override void Shoot()
     {
         base.Shoot();
         // In the direction of Y-axis of proj
-        // speed affected by player velocity, can't be lower than shotStrengthNoPlayer (i.e base speed)
         Vector2 towardsPlayer = PlayerController.Instance.transform.position - gameObject.transform.position;
         Vector2 shotStrength = towardsPlayer.normalized * projectileSpeed;
         //Rb.velocity = Vector2.zero;

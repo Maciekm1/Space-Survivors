@@ -8,6 +8,7 @@ public class AIActionDeploy : AIAction
     public override void Do(GameObject go)
     {
         base.Do(go);
+        Debug.Log("Hmm");
     }
 
     public override void DoFixed(GameObject go)

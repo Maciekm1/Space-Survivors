@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 1
-  <Damage>k__BackingField: 0
+  <Damage>k__BackingField: 5
   <ExperienceGiven>k__BackingField: 3
   <KnockbackForce>k__BackingField: 10
   hasDeathAnim: 1

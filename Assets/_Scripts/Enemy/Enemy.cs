@@ -5,10 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class Enemy : MonoBehaviour
 {
-    [field:SerializeField] public float MoveSpeed {  get; private set; }
+    [field:SerializeField] public float MoveSpeed {  get; protected set; }
     [field:SerializeField] public float Damage { get; private set; }
     [field:SerializeField] public float ExperienceGiven { get; private set; }
     [field: SerializeField]  public float KnockbackForce { get; internal set; }
+    public float InternalHealthRechargeTimer { get; set; }
 
     public Rigidbody2D Rb { get; private set; }
     public Collider2D Col { get; private set; }
@@ -16,6 +17,7 @@ public class Enemy : MonoBehaviour
     public FlashEffect Flash { get; private set; }
     public Animator Animator { get; private set; }
     public Vector2 TowardsPlayer { get; set; }
+    protected float initialMoveSpeed;
 
     [SerializeField] protected bool hasDeathAnim;
     [SerializeField] AnimationClip deathAnimationClip;
@@ -27,6 +29,7 @@ public class Enemy : MonoBehaviour
         HealthComp = GetComponent<Health>();
         Flash = GetComponentInChildren<FlashEffect>();
         Animator = GetComponentInChildren<Animator>();
+        initialMoveSpeed = MoveSpeed;
     }
 
     protected virtual void OnEnable()
