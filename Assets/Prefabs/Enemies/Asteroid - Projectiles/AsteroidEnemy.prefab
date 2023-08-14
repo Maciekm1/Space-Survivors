@@ -161,6 +161,7 @@ MonoBehaviour:
   <MoveSpeed>k__BackingField: 1
   <Damage>k__BackingField: 0
   <ExperienceGiven>k__BackingField: 3
+  <KnockbackForce>k__BackingField: 10
   hasDeathAnim: 1
   deathAnimationClip: {fileID: 7400000, guid: 91385671c164d2e4aa7c073c1fcb376b, type: 2}
   projectile: {fileID: 646994362072495120, guid: 9b390bdfe0afbf64bbda10f3fc55d6b5, type: 3}

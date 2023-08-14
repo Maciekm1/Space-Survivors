@@ -14,6 +14,7 @@ public class EnemyAsteroid : Enemy
     private AIStateController controller;
     [SerializeField] private AIState spawnProjState;
     [SerializeField] private float spawnDeviationStart;
+    private float rotationRate;
 
     protected override void Awake()
     {
@@ -21,6 +22,7 @@ public class EnemyAsteroid : Enemy
         pooler = GetComponent<ObjectPooler>();
         controller = GetComponent<AIStateController>();
         internalSpawnProjTimer = projectileSpawnCD;
+        rotationRate = Random.Range(1f, 15f);
     }
 
     private void Update()
@@ -33,8 +35,15 @@ public class EnemyAsteroid : Enemy
         }
     }
 
+    private void FixedUpdate()
+    {
+        // Apply the torque to the Rigidbody
+        Rb.AddTorque(Rb.inertia * Mathf.Deg2Rad * rotationRate);
+    }
+
     private void SpawnProjectiles()
     {
+        Animator.SetTrigger("SpawnProj");
         for(int i = 0; i < projectilesSpawned; i++)
         {
             Projectile proj = pooler.GetProjectileFromPool().GetComponent<Projectile>();

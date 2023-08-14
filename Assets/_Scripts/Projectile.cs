@@ -6,7 +6,7 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour
 {
-    [SerializeField] protected float projectileDamage;
+    [field:SerializeField] public float ProjectileDamage { get; private set; }
     [SerializeField] protected float projectileSpeed;
     [SerializeField] protected float projectileLifeTime;
     [field:SerializeField] public float ProjectileKnockback { get; private set; }
@@ -47,6 +47,7 @@ public abstract class Projectile : MonoBehaviour
     {
         coroutineStarted = false;
         spriteRenderer.enabled = true;
+        col.enabled = true;
 
         shot = true;
     }
@@ -77,6 +78,7 @@ public abstract class Projectile : MonoBehaviour
     {
         coroutineStarted = true;
         Rb.velocity = Vector2.zero;
+        col.enabled = false;
         spriteRenderer.enabled = false;
         particleSystemExplosion.Play();
         yield return new WaitForSeconds(particleSystemExplosion.main.duration);

@@ -8,12 +8,13 @@ public class Enemy : MonoBehaviour
     [field:SerializeField] public float MoveSpeed {  get; private set; }
     [field:SerializeField] public float Damage { get; private set; }
     [field:SerializeField] public float ExperienceGiven { get; private set; }
+    [field: SerializeField]  public float KnockbackForce { get; internal set; }
 
     public Rigidbody2D Rb { get; private set; }
     public Collider2D Col { get; private set; }
     public Health HealthComp { get; private set; }
     public FlashEffect Flash { get; private set; }
-    public Animator animator { get; private set; }
+    public Animator Animator { get; private set; }
     public Vector2 TowardsPlayer { get; set; }
 
     [SerializeField] protected bool hasDeathAnim;
@@ -25,11 +26,13 @@ public class Enemy : MonoBehaviour
         Col = GetComponent<Collider2D>();
         HealthComp = GetComponent<Health>();
         Flash = GetComponentInChildren<FlashEffect>();
-        animator = GetComponentInChildren<Animator>();
+        Animator = GetComponentInChildren<Animator>();
     }
 
     protected virtual void OnEnable()
     {
+        Col.enabled = true;
+        HealthComp.ResetHealthShield();
         HealthComp.OnLoseAllHealth += Health_OnLoseAllHealth;
     }
 
@@ -51,7 +54,7 @@ public class Enemy : MonoBehaviour
     {
         Rb.velocity = Vector2.zero;
         Col.enabled = false;
-        animator.SetTrigger("Death");
+        Animator.SetTrigger("Death");
         yield return new WaitForSeconds(deathAnimationClip.length);
         gameObject.SetActive(false);
     }

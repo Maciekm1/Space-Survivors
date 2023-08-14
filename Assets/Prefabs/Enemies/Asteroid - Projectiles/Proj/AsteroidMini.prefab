@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileDamage: 1
-  projectileSpeed: 5
+  projectileSpeed: 3
   projectileLifeTime: 5
   <ProjectileKnockback>k__BackingField: 0.2
   <playerDamage>k__BackingField: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   particleSystemExplosion: {fileID: 0}
   targetDelay: 1
   accelerationStrength: 1
-  accelerateTimer: 0.1
+  accelerateTimer: 0.05
   deathAnimationClip: {fileID: 7400000, guid: 91385671c164d2e4aa7c073c1fcb376b, type: 2}
 --- !u!1 &6707423849820980634
 GameObject:

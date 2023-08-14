@@ -15,6 +15,7 @@ public class ProjAsteroidMini : Projectile
     {
         internalTargetDelay = targetDelay;
         internalAccelerateTimer = accelerateTimer;
+        col.enabled = true;
     }
 
     protected override void Update()
@@ -40,7 +41,7 @@ public class ProjAsteroidMini : Projectile
         // speed affected by player velocity, can't be lower than shotStrengthNoPlayer (i.e base speed)
         Vector2 towardsPlayer = PlayerController.Instance.transform.position - gameObject.transform.position;
         Vector2 shotStrength = towardsPlayer.normalized * projectileSpeed;
-        Rb.velocity = Vector2.zero;
+        //Rb.velocity = Vector2.zero;
         Rb.AddForce(shotStrength, ForceMode2D.Impulse);
     }
 
@@ -75,6 +76,7 @@ public class ProjAsteroidMini : Projectile
     {
         coroutineStarted = true;
         Rb.velocity = Vector2.zero;
+        col.enabled = false;
         //spriteRenderer.enabled = false;
         GetComponentInChildren<Animator>().SetTrigger("Death");
         yield return new WaitForSeconds(deathAnimationClip.length);

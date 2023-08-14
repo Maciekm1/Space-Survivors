@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
         {
             if (!proj.playerDamage)
             {
-                PlayerHealth.TakeDamage(20);
+                PlayerHealth.TakeDamage(proj.ProjectileDamage);
 
                 //Knockback + visual
                 Rb.AddForce(proj.Rb.velocity * proj.ProjectileKnockback, ForceMode2D.Impulse);
@@ -93,6 +93,19 @@ public class PlayerController : MonoBehaviour
 
                 proj.DestroyProjectile();
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Enemy enemy;
+        if (collision.collider.TryGetComponent<Enemy>(out enemy))
+        {
+            PlayerHealth.TakeDamage(10f);
+
+            //Knockback + visual
+            Rb.AddForce(enemy.Rb.velocity * enemy.KnockbackForce, ForceMode2D.Impulse);
+            Flash.StartFlash(.1f, 1);
         }
     }
 

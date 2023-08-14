@@ -32,6 +32,13 @@ public class Health : MonoBehaviour
     public float GetShieldCurrent() { return shieldCurrent; }
     public float GetShieldMax() { return shieldMax; }
 
+    public void ResetHealthShield()
+    {
+        healthCurrent = healthMax;
+        shieldCurrent = shieldMax;
+        alive = true;
+    }
+
     protected virtual void Awake()
     {
         healthCurrent = healthMax;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAsteroidDash : Enemy
+public class EnemyVoidBat : Enemy
 {
-    private AIStateController controller;
+
 }
