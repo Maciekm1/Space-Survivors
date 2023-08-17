@@ -53,6 +53,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    protected virtual void Update()
+    {
+        TowardsPlayer = PlayerController.Instance.transform.position - transform.position;
+    }
+
     IEnumerator Death()
     {
         Rb.velocity = Vector2.zero;

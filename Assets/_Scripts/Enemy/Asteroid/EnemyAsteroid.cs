@@ -25,8 +25,9 @@ public class EnemyAsteroid : Enemy
         rotationRate = Random.Range(1f, 15f);
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         internalSpawnProjTimer -= Time.deltaTime;
         if(controller.GetCurrentState() == spawnProjState && internalSpawnProjTimer <= 0)
         {

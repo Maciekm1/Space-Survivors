@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTheMoth : Enemy
+public class EnemyTheMoth : Enemy, IFlippable
 {
     [Header("TheMoth Settings")]
     [SerializeField] Projectile projectile;
-    [SerializeField] private int projectilesSpawned = 2;
+    [SerializeField] private int projectilesSpawned = 1;
     [SerializeField] private float projectileSpawnCD = 5f;
     [SerializeField] private float moveSpeedWhenHurt;
     private float internalSpawnProjTimer;
@@ -14,6 +14,7 @@ public class EnemyTheMoth : Enemy
     private ObjectPooler pooler;
     private AIStateController controller;
     [SerializeField] private AIState spawnProjState;
+    [SerializeField] private AIState rechargeState;
     [SerializeField] Transform spawnProjPos;
     AIState startState;
 
@@ -26,8 +27,10 @@ public class EnemyTheMoth : Enemy
         startState = controller.GetCurrentState();
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+        Flip();
         if(HealthComp.GetHealthCurrent() == 1)
         {
             MoveSpeed = moveSpeedWhenHurt;
@@ -39,8 +42,17 @@ public class EnemyTheMoth : Enemy
         internalSpawnProjTimer -= Time.deltaTime;
         if (controller.GetCurrentState() == spawnProjState && internalSpawnProjTimer <= 0)
         {
-            SpawnProjectiles();
+            Animator.SetTrigger("Attack"); // Temp, replace with Attack()
             internalSpawnProjTimer = projectileSpawnCD;
+        }
+
+        if(controller.GetCurrentState() == rechargeState)
+        {
+            Animator.SetBool("RechargeState", true);
+        }
+        else
+        {
+            Animator.SetBool("RechargeState", false);
         }
     }
 
@@ -49,6 +61,11 @@ public class EnemyTheMoth : Enemy
         base.OnEnable();
         controller.SetState(startState);
 
+    }
+
+    public void Attack()
+    {
+        SpawnProjectiles();
     }
     private void SpawnProjectiles()
     {
@@ -59,6 +76,42 @@ public class EnemyTheMoth : Enemy
             proj.gameObject.SetActive(true);
             proj.transform.SetPositionAndRotation(spawnProjPos.position, Quaternion.identity);
             proj.Shoot();
+        }
+    }
+
+    public void Flip()
+    {
+        if(controller.GetCurrentState() == spawnProjState) // Spawning Projectiles
+        {
+            if (controller.GetCurrentState() == spawnProjState)
+            {
+                // Check if TowardsPlayer is not a zero vector
+                if (TowardsPlayer != Vector2.zero)
+                {
+                    float playerDirection = Mathf.Sign(TowardsPlayer.x);
+                    if (playerDirection < 0)
+                    {
+                        transform.localScale = new Vector3(1, 1, 1);
+                    }
+                    else
+                    {
+                        transform.localScale = new Vector3(-1, 1, 1);
+                    }
+                }
+            }
+
+        }
+        else
+        {
+            // otherwise, face movement direction
+            if (Rb.velocity.x > 0)
+            {
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else
+            {
+                transform.localScale = new Vector3(1, 1, 1);
+            }
         }
     }
 }

@@ -88,7 +88,15 @@ public class PlayerController : MonoBehaviour
                 PlayerHealth.TakeDamage(proj.ProjectileDamage);
 
                 //Knockback + visual
-                Rb.AddForce(proj.Rb.velocity * proj.ProjectileKnockback, ForceMode2D.Impulse);
+                if(proj.Rb.velocity.magnitude == 0)
+                {
+                    Vector2 projToPlayer = -proj.transform.position + transform.position;
+                    Rb.AddForce(projToPlayer, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    Rb.AddForce(proj.Rb.velocity * proj.ProjectileKnockback, ForceMode2D.Impulse);
+                }
                 Flash.StartFlash(.1f, 1);
 
                 proj.DestroyProjectile();

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3578187200337242898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.351, y: -0.131, z: 0}
+  m_LocalPosition: {x: -0.471, y: -0.131, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -198,8 +198,9 @@ MonoBehaviour:
   projectile: {fileID: 8431441571193026490, guid: 592f6cbd76bbace48af20ce73b246ad7, type: 3}
   projectilesSpawned: 1
   projectileSpawnCD: 5
-  moveSpeedWhenHurt: 2
+  moveSpeedWhenHurt: 5
   spawnProjState: {fileID: 11400000, guid: 39957d7fe97d60f42b7caea2d8d31539, type: 2}
+  rechargeState: {fileID: 11400000, guid: d7afeb827b8ed2441824c28aba15243e, type: 2}
   spawnProjPos: {fileID: 2286803347197108726}
 --- !u!114 &9166298192081212651
 MonoBehaviour:
@@ -284,8 +285,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7652954092375344637, guid: 1f920a472b4ea5840b92a379377c7acb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 308630366919209986}
   m_SourcePrefab: {fileID: 100100000, guid: 1f920a472b4ea5840b92a379377c7acb, type: 3}
+--- !u!1 &836948359411904995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7652954092375344637, guid: 1f920a472b4ea5840b92a379377c7acb, type: 3}
+  m_PrefabInstance: {fileID: 7037350687032751134}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &308630366919209986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836948359411904995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d38d6d3645a74040a2de87dc9d5fe65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6275985763883762128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3941061882961688014, guid: 1f920a472b4ea5840b92a379377c7acb, type: 3}

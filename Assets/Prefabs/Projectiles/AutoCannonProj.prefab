@@ -269,7 +269,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ProjectileDamage>k__BackingField: 1
   <projectileSpeed>k__BackingField: 8
-  projectileLifeTime: 1
+  projectileLifeTime: 1.2
   <ProjectileKnockback>k__BackingField: 0.2
   <playerDamage>k__BackingField: 1
   usesParticleExplosion: 1

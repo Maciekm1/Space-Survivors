@@ -23,7 +23,7 @@ public abstract class Projectile : MonoBehaviour
     protected bool coroutineStarted = false;
     protected float lifetimeEnd;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
         col = Rb.GetComponent<Collider2D>();

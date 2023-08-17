@@ -40,6 +40,7 @@ public class PlayerLevel : MonoBehaviour
         playerCurrentExperience = overload;
         playerXPNeededForLevelUp = playerXPRequirementPerLevel * playerXPRequirementScalePerLevel * playerCurrentLevel;
         OnLevelUp?.Invoke();
+        if (playerCurrentExperience >= playerXPNeededForLevelUp) { PlayerLevelUp(playerCurrentExperience - playerXPNeededForLevelUp); }
         PlayerUI.instance.UpdatePlayerLevel();
     }
 

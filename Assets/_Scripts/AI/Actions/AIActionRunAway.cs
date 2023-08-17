@@ -8,11 +8,7 @@ public class AIActionRunAway : AIAction
 
     public override void Do(GameObject go)
     {
-        var enemy = go.GetComponent<Enemy>();
-        if (enemy != null)
-        {
-            enemy.TowardsPlayer = PlayerController.Instance.transform.position - go.transform.position;
-        }
+
     }
     public override void DoFixed(GameObject go)
     {
