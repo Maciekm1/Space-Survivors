@@ -91,4 +91,13 @@ public class PlayerUI : MonoBehaviour
             dashCharges.fillAmount = (dashBarSize * playerDash.GetDashCharges()) + Mathf.Lerp(dashBarSize, 0, playerDash.GetDashChargesTimer() / playerDash.GetDashChargesRecharge());
         }
     }
+
+    public void Reset()
+    {
+        UpdateHealthBar();
+        UpdateShieldBar();
+        UpdatePlayerLevel();
+        UpdateXpBar();
+        UpdatePlayerDash();
+    }
 }

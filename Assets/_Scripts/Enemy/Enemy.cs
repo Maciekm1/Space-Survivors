@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour
         Col.enabled = true;
         HealthComp.ResetHealthShield();
         HealthComp.OnLoseAllHealth += Health_OnLoseAllHealth;
+        GameManager.Instance.OnGameEnd += DeathStart;
     }
 
     private void Health_OnLoseAllHealth()
@@ -45,7 +46,7 @@ public class Enemy : MonoBehaviour
         PlayerController.Instance.PlayerLevel.PlayerGainXP(ExperienceGiven);
         if (hasDeathAnim)
         {
-            StartCoroutine(Death());
+            DeathStart();
         }
         else
         {
@@ -56,6 +57,11 @@ public class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         TowardsPlayer = PlayerController.Instance.transform.position - transform.position;
+    }
+
+    private void DeathStart()
+    {
+        StartCoroutine(Death());
     }
 
     IEnumerator Death()
@@ -70,6 +76,7 @@ public class Enemy : MonoBehaviour
     protected virtual void OnDisable()
     {
         HealthComp.OnLoseAllHealth -= Health_OnLoseAllHealth;
+        GameManager.Instance.OnGameEnd -= DeathStart;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

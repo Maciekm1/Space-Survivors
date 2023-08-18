@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,9 +12,12 @@ public class GameManager : MonoBehaviour
     private UIManager uiManager;
     private TutorialManager tutorialManager;
     private EnemySpawner spawner;
+    [SerializeField] PlayerController playerController;
+    //Events
+    public Action OnGameEnd;
 
     private float gameTime;
-    private bool gameStarted = false;
+    private bool gameOn = false;
 
     private void Awake()
     {
@@ -26,22 +30,37 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         tutorialManager.OnTutorialFinish += StartGame;
+        playerController.PlayerHealth.OnLoseAllHealth += EndGame;
     }
 
     private void OnDisable()
     {
         tutorialManager.OnTutorialFinish -= StartGame;
+        playerController.PlayerHealth.OnLoseAllHealth -= EndGame;
     }
 
     public void StartGame()
     {
-        gameStarted = true;
+        gameTime = 0;
+        uiManager.HideEndGameScreen();
+
+        gameOn = true;
         spawner.StartSpawning();
+        playerController.ResetPlayer();
+    }
+
+    public void EndGame()
+    {
+        uiManager.ShowEndGameScreen();
+
+        gameOn = false;
+        spawner.StopSpawning();
+        OnGameEnd?.Invoke();
     }
 
     private void Update()
     {
-        if(gameStarted)
+        if(gameOn)
         {
             gameTime += Time.deltaTime;
             uiManager.UpdateGameTime(gameTime);

@@ -22,6 +22,12 @@ public class PlayerLevel : MonoBehaviour
 
     private void Awake()
     {
+        Reset();
+    }
+
+    public void Reset()
+    {
+        playerCurrentExperience = 0;
         playerCurrentLevel = playerStartLevel;
         playerXPNeededForLevelUp = playerXPRequirementPerLevel;
     }

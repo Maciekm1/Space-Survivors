@@ -20,14 +20,21 @@ public class EnemySpawner : MonoBehaviour
 
     private float currentSpawnInterval;
 
-    private void Start()
-    {
-        currentSpawnInterval = spawnInterval;
-    }
-
     public void StartSpawning()
     {
+        Reset();
         StartCoroutine(SpawnEnemies());
+    }
+
+    public void StopSpawning()
+    {
+        StopAllCoroutines();
+        Debug.Log("Stop");
+    }
+
+    private void Reset()
+    {
+        currentSpawnInterval = spawnInterval;
     }
 
     private IEnumerator SpawnEnemies()

@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using DG.Tweening.Core.Easing;
-
+[DefaultExecutionOrder(-1)]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;
@@ -11,7 +10,8 @@ public class PlayerController : MonoBehaviour
     public PlayerLevel PlayerLevel { get; private set; }
     public PlayerDash PlayerDash { get; private set; }
     public Rigidbody2D Rb { get; private set; }
-    [field:SerializeField]public FlashEffect Flash { get; private set; }
+    [field:SerializeField] public PlayerUI PlayerUI { get; private set; }
+    [field:SerializeField] public FlashEffect Flash { get; private set; }
 
     [SerializeField] CinemachineVirtualCamera cam;
     [SerializeField] private Collider2D col;
@@ -115,6 +115,13 @@ public class PlayerController : MonoBehaviour
             Rb.AddForce(enemy.Rb.velocity * enemy.KnockbackForce, ForceMode2D.Impulse);
             Flash.StartFlash(.1f, 1);
         }
+    }
+
+    public void ResetPlayer()
+    {
+        PlayerHealth.ResetHealthShield();
+        PlayerLevel.Reset();
+        PlayerUI.Reset();
     }
 
     public bool IsMoving()
