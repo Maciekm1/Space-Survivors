@@ -7,12 +7,13 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] popUps;
-    private int popUpIndex;
     [SerializeField] private PlayerInput playerInput;
+    private int popUpIndex;
     private bool forwardMovement = true;
     private bool rotationMovement = false;
-
     private bool tutorialFinished = false;
+
+    public event Action OnTutorialFinish;
 
     private void DisplayPopUp(int i)
     {
@@ -88,7 +89,8 @@ public class TutorialManager : MonoBehaviour
                 //Last Call - Deactivate gameObject and last pop up
                 popUps[popUpIndex-1].SetActive(false);
                 tutorialFinished = true;
-                //this.enabled = false;
+                OnTutorialFinish?.Invoke();
+                this.enabled = false;
             });
             StartCoroutine(coroutine);
         });
