@@ -42,7 +42,6 @@ public class Enemy : MonoBehaviour
 
     private void Health_OnLoseAllHealth()
     {
-        Debug.Log("Death");
         PlayerController.Instance.PlayerLevel.PlayerGainXP(ExperienceGiven);
         if (hasDeathAnim)
         {
@@ -66,9 +65,9 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Death()
     {
+        Animator.SetTrigger("Death");
         Rb.velocity = Vector2.zero;
         Col.enabled = false;
-        Animator.SetTrigger("Death");
         yield return new WaitForSeconds(deathAnimationClip.length);
         gameObject.SetActive(false);
     }

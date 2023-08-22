@@ -16,13 +16,15 @@ public class EnemyAsteroid : Enemy
     [SerializeField] private float spawnDeviationStart;
     private float rotationRate;
 
+    private const string SPAWN_PROJ = "SpawnProj";
+
     protected override void Awake()
     {
         base.Awake();
-        pooler = GetComponent<ObjectPooler>();
         controller = GetComponent<AIStateController>();
         internalSpawnProjTimer = projectileSpawnCD;
         rotationRate = Random.Range(1f, 15f);
+        pooler = GameObject.Find("ProjPoolAsteroid").GetComponent<ObjectPooler>();
     }
 
     protected override void Update()
@@ -44,10 +46,10 @@ public class EnemyAsteroid : Enemy
 
     private void SpawnProjectiles()
     {
-        Animator.SetTrigger("SpawnProj");
+        Animator.SetTrigger(SPAWN_PROJ);
         for(int i = 0; i < projectilesSpawned; i++)
         {
-            Projectile proj = pooler.GetProjectileFromPool().GetComponent<Projectile>();
+            Projectile proj = pooler.GetObjectFromPool().GetComponent<Projectile>();
             proj.gameObject.SetActive(true);
             proj.gameObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
             proj.Rb.AddForce(new Vector2(Random.Range(-spawnDeviationStart, spawnDeviationStart), Random.Range(-spawnDeviationStart, spawnDeviationStart)), ForceMode2D.Impulse);

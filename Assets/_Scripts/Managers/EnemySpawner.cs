@@ -7,7 +7,7 @@ public class EnemySpawner : MonoBehaviour
     [System.Serializable]
     public class EnemySpawnInfo
     {
-        public GameObject enemyPrefab;
+        public ObjectPooler enemyPool;
         public float spawnChance;
     }
 
@@ -56,7 +56,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 if (randomValue <= spawnInfo.spawnChance)
                 {
-                    selectedEnemyPrefab = spawnInfo.enemyPrefab;
+                    selectedEnemyPrefab = spawnInfo.enemyPool.GetObjectFromPool();
                     break;
                 }
                 else
@@ -69,8 +69,9 @@ public class EnemySpawner : MonoBehaviour
             {
                 int randomSpawnPointIndex = Random.Range(0, spawnPoints.Length);
 
-                GameObject newEnemy = Instantiate(selectedEnemyPrefab, spawnPoints[randomSpawnPointIndex].position, Quaternion.identity);
-
+                // GameObject newEnemy = Instantiate(selectedEnemyPrefab, spawnPoints[randomSpawnPointIndex].position, Quaternion.identity);
+                selectedEnemyPrefab.transform.SetPositionAndRotation(spawnPoints[randomSpawnPointIndex].position, Quaternion.identity);
+                selectedEnemyPrefab.SetActive(true);
                 // Customize enemy behavior or properties here if needed
             }
 

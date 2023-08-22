@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4033561787597478271}
   - component: {fileID: 1277234602553708056}
   - component: {fileID: 2596620869878801067}
-  - component: {fileID: 7753255266066263671}
   - component: {fileID: 3987250537642554815}
   - component: {fileID: 1552830241251417542}
   - component: {fileID: 6632440079619959993}
@@ -23,7 +22,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6781931385421562205
 Transform:
   m_ObjectHideFlags: 0
@@ -39,7 +38,7 @@ Transform:
   - {fileID: 2686752452945851374}
   - {fileID: 7607237288794952734}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!58 &8658027806554446602
 CircleCollider2D:
@@ -130,22 +129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: e1e18f83a13dd34418f0da6886cf85aa, type: 2}
   remainState: {fileID: 11400000, guid: 856ae81c9bbb4e446abab5504d7cb8f9, type: 2}
---- !u!114 &7753255266066263671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051067568810022753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 008b4531edf5ee743861d6ea2aec6ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentName: AsteroidProj
-  projectile: {fileID: 1230815683571067035, guid: 9b390bdfe0afbf64bbda10f3fc55d6b5, type: 3}
-  poolSize: 4
-  poolCanExpand: 1
 --- !u!114 &3987250537642554815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +146,7 @@ MonoBehaviour:
   <ExperienceGiven>k__BackingField: 3
   <KnockbackForce>k__BackingField: 10
   hasDeathAnim: 1
-  deathAnimationClip: {fileID: 7400000, guid: 91385671c164d2e4aa7c073c1fcb376b, type: 2}
+  deathAnimationClip: {fileID: 7400000, guid: a9f53937505082a40a1dd100581b8684, type: 2}
   projectile: {fileID: 646994362072495120, guid: 9b390bdfe0afbf64bbda10f3fc55d6b5, type: 3}
   projectilesSpawned: 2
   projectileSpawnCD: 5
@@ -314,8 +297,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2686752452945851374}
-  - component: {fileID: 1524764469671326768}
-  - component: {fileID: 8346079070326630160}
+  - component: {fileID: 6159554940690996659}
+  - component: {fileID: 3420916094591409370}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -338,7 +321,7 @@ Transform:
   m_Father: {fileID: 6781931385421562205}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1524764469671326768
+--- !u!212 &6159554940690996659
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -390,7 +373,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8346079070326630160
+--- !u!95 &3420916094591409370
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -400,7 +383,7 @@ Animator:
   m_GameObject: {fileID: 4708958071439224512}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f53cfe13c06c3564faa9a2ad3df69916, type: 2}
+  m_Controller: {fileID: 9100000, guid: 18b3695ef7fae3d4497d21e6c41367b2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

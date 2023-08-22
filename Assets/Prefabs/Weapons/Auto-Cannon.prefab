@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentName: AutoCannonPool
-  projectile: {fileID: 7410337474147566699, guid: a71712a0124290f4b9c447f4410d5acd, type: 3}
+  item: {fileID: 7410337474147566699, guid: a71712a0124290f4b9c447f4410d5acd, type: 3}
   poolSize: 6
   poolCanExpand: 1
 --- !u!1 &9140587307682258717

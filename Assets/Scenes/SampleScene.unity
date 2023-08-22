@@ -594,6 +594,55 @@ Transform:
   m_Father: {fileID: 692705910}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &135166223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 135166224}
+  - component: {fileID: 135166225}
+  m_Layer: 0
+  m_Name: AsteroidStrikerPoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &135166224
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135166223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1049402518}
+  m_Father: {fileID: 1603329506}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &135166225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135166223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008b4531edf5ee743861d6ea2aec6ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentName: AsteroidStrikerPool
+  item: {fileID: 2051067568810022753, guid: 06eb2a555dac36146a38493cc7127f1f, type: 3}
+  poolSize: 15
+  poolCanExpand: 0
 --- !u!1 &155312149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,6 +1858,54 @@ Transform:
   m_Father: {fileID: 1097647050}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &638033320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 638033321}
+  - component: {fileID: 638033322}
+  m_Layer: 0
+  m_Name: VoidBatSpeedPoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &638033321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638033320}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1603329506}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &638033322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638033320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008b4531edf5ee743861d6ea2aec6ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentName: VoidBatSpeedPool
+  item: {fileID: 2985785053454315230, guid: 4f9471649cdab35408d674027f50a9a1, type: 3}
+  poolSize: 15
+  poolCanExpand: 0
 --- !u!1 &662675852
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,6 +2574,54 @@ MonoBehaviour:
   parallaxEffect: {x: 0.8, y: 0.8}
   infiniteHorizontal: 1
   infiniteVertical: 1
+--- !u!1 &1049402517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049402518}
+  - component: {fileID: 1049402519}
+  m_Layer: 0
+  m_Name: ProjPoolAsteroid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1049402518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049402517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 135166224}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1049402519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049402517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008b4531edf5ee743861d6ea2aec6ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentName: AsteroidProj
+  item: {fileID: 1230815683571067035, guid: 9b390bdfe0afbf64bbda10f3fc55d6b5, type: 3}
+  poolSize: 20
+  poolCanExpand: 1
 --- !u!1 &1053747774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3078,6 +3223,103 @@ Transform:
   m_Father: {fileID: 2033491969}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1331582318
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1331582319}
+  - component: {fileID: 1331582320}
+  m_Layer: 0
+  m_Name: TheMothPoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1331582319
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331582318}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1989331600}
+  m_Father: {fileID: 1603329506}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1331582320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331582318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008b4531edf5ee743861d6ea2aec6ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentName: TheMothPool
+  item: {fileID: 8027021796756935823, guid: eea3197fbc4bf2140829086df329aba4, type: 3}
+  poolSize: 5
+  poolCanExpand: 0
+--- !u!1 &1352663771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1352663772}
+  - component: {fileID: 1352663773}
+  m_Layer: 0
+  m_Name: VoidBatPoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1352663772
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352663771}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1603329506}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1352663773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352663771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008b4531edf5ee743861d6ea2aec6ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentName: VoidBatPool
+  item: {fileID: 1894518435243936361, guid: 833d049d9cabddb4e9fc29e02c110341, type: 3}
+  poolSize: 50
+  poolCanExpand: 0
 --- !u!1 &1401045093
 GameObject:
   m_ObjectHideFlags: 0
@@ -3663,6 +3905,7 @@ GameObject:
   - component: {fileID: 1603329509}
   - component: {fileID: 1603329510}
   - component: {fileID: 1603329508}
+  - component: {fileID: 1603329511}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -3681,7 +3924,11 @@ Transform:
   m_LocalPosition: {x: -4.051735, y: 5.437832, z: -0.19218516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1352663772}
+  - {fileID: 638033321}
+  - {fileID: 135166224}
+  - {fileID: 1331582319}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3704,6 +3951,7 @@ MonoBehaviour:
   - {fileID: 1957292155}
   - {fileID: 239771290}
   playerInput: {fileID: 2102417674}
+  completeTutorial: 1
 --- !u!114 &1603329508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3717,12 +3965,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnInfos:
-  - enemyPrefab: {fileID: 1894518435243936361, guid: 833d049d9cabddb4e9fc29e02c110341, type: 3}
-    spawnChance: 75
-  - enemyPrefab: {fileID: 2051067568810022753, guid: 06eb2a555dac36146a38493cc7127f1f, type: 3}
-    spawnChance: 22
-  - enemyPrefab: {fileID: 8027021796756935823, guid: eea3197fbc4bf2140829086df329aba4, type: 3}
+  - enemyPool: {fileID: 1352663773}
+    spawnChance: 12
+  - enemyPool: {fileID: 638033322}
+    spawnChance: 6
+  - enemyPool: {fileID: 135166225}
     spawnChance: 3
+  - enemyPool: {fileID: 1331582320}
+    spawnChance: 1
   spawnPoints:
   - {fileID: 1281104485}
   - {fileID: 1612975431}
@@ -3762,6 +4012,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTimeText: {fileID: 224133642}
   gameEndObject: {fileID: 724323834}
+--- !u!114 &1603329511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603329505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16376eee21ca9242910f955cd136f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minorCards: []
+  majorCards: []
+  ultimateCards: []
 --- !u!1 &1612975430
 GameObject:
   m_ObjectHideFlags: 0
@@ -5035,6 +5300,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957292155}
   m_CullTransparentMesh: 1
+--- !u!1 &1989331599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1989331600}
+  - component: {fileID: 1989331601}
+  m_Layer: 0
+  m_Name: ProjPoolMoth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1989331600
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989331599}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331582319}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1989331601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989331599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008b4531edf5ee743861d6ea2aec6ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentName: TheMothProj
+  item: {fileID: 5564465475895275198, guid: 592f6cbd76bbace48af20ce73b246ad7, type: 3}
+  poolSize: 5
+  poolCanExpand: 1
 --- !u!1 &2033491968
 GameObject:
   m_ObjectHideFlags: 0
@@ -5327,13 +5640,14 @@ GameObject:
   - component: {fileID: 2102417672}
   - component: {fileID: 2102417676}
   - component: {fileID: 2102417675}
+  - component: {fileID: 2102417681}
   - component: {fileID: 2102417674}
   - component: {fileID: 2102417677}
-  - component: {fileID: 2102417673}
+  - component: {fileID: 2102417679}
   - component: {fileID: 2102417678}
   - component: {fileID: 2102417680}
-  - component: {fileID: 2102417679}
-  - component: {fileID: 2102417681}
+  - component: {fileID: 2102417682}
+  - component: {fileID: 2102417673}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5380,6 +5694,23 @@ MonoBehaviour:
   col: {fileID: 2102417675}
   moveSpeed: 6
   turnSpeed: 0.2
+  playerStats:
+    damagePerBulletMult: 1
+    fireRateMult: 1
+    projectileSpeedMult: 1
+    projectileLifeTimeMult: 1
+    projectileKnockBackMult: 1
+    weaponRecoilMult: 1
+    moveSpeed: 6
+    rotationSpeed: 0.2
+    dashForce: 500
+    dashCharges: 1
+    dashRegen: 5
+    health: 100
+    healthRegen: 0.25
+    shield: 50
+    shieldRegen: 0.5
+    expGainMult: 1
   current_weapon: {fileID: 830649562}
 --- !u!114 &2102417674
 MonoBehaviour:
@@ -5546,6 +5877,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2102417682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102417671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c49356201187f64482b32123e1f2dad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3019514311155833955
 PrefabInstance:
   m_ObjectHideFlags: 0

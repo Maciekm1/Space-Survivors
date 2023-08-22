@@ -8,43 +8,43 @@ public class ObjectPooler : MonoBehaviour
     [SerializeField] private string parentName;
     private GameObject parent;
 
-    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject item;
     [SerializeField] private int poolSize;
     [SerializeField] private bool poolCanExpand;
 
-    private List<GameObject> projectiles = new();
+    private List<GameObject> items = new();
 
     private void Start()
     {
         parent = new GameObject(parentName);
         for (int i = 0; i < poolSize; i++) 
         {
-            NewProjectile();
+            NewObject();
         }
     }
 
-    public GameObject GetProjectileFromPool()
+    public GameObject GetObjectFromPool()
     {
-        foreach (GameObject proj in projectiles)
+        foreach (GameObject i in items)
         {
-            if (!proj.activeInHierarchy)
+            if (!i.activeInHierarchy)
             {
-                return proj;
+                return i;
             }
         }
         if (poolCanExpand)
         {
-            return NewProjectile();
+            return NewObject();
         }
         return null;
     }
 
-    private GameObject NewProjectile()
+    private GameObject NewObject()
     {
-        GameObject proj = Instantiate(projectile);
-        projectile.gameObject.SetActive(false);
-        projectiles.Add(proj);
-        proj.transform.parent = parent.transform;
-        return proj;
+        GameObject i = Instantiate(item);
+        item.SetActive(false);
+        items.Add(i);
+        i.transform.parent = parent.transform;
+        return i;
     }
 }

@@ -41,7 +41,7 @@ public class AutoCannon : PlayerWeapon
 
     public void ShootLeft() 
     {
-        GameObject proj = pooler.GetProjectileFromPool();
+        GameObject proj = pooler.GetObjectFromPool();
         proj.transform.SetPositionAndRotation(leftPointer.position, transform.rotation);
         proj.SetActive(true);
         ApplyRecoil();
@@ -49,7 +49,7 @@ public class AutoCannon : PlayerWeapon
 
     public void ShootRight()
     {
-        GameObject proj = pooler.GetProjectileFromPool();
+        GameObject proj = pooler.GetObjectFromPool();
         proj.transform.SetPositionAndRotation(rightPointer.position, transform.rotation);
         proj.SetActive(true);
         ApplyRecoil();

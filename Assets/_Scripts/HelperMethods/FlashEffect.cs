@@ -20,6 +20,7 @@ public class FlashEffect : MonoBehaviour
 
     private IEnumerator FlashCoroutine(float duration, int flashCount)
     {
+        Debug.Log("Flash");
         for (int i = 0; i < flashCount; i++)
         {
             spriteRenderer.material = whiteFlashMaterial;

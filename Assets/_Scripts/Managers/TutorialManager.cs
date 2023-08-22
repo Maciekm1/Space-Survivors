@@ -8,6 +8,7 @@ public class TutorialManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] popUps;
     [SerializeField] private PlayerInput playerInput;
+    [SerializeField] private bool completeTutorial;
     private int popUpIndex;
     private bool forwardMovement = true;
     private bool rotationMovement = false;
@@ -35,8 +36,15 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
-        popUpIndex = 0;
-        DisplayPopUp(popUpIndex);
+        if (completeTutorial)
+        {
+            TutorialFinished();
+        }
+        else
+        {
+            popUpIndex = 0;
+            DisplayPopUp(popUpIndex);
+        }
     }
 
     private void Update()
@@ -88,9 +96,7 @@ public class TutorialManager : MonoBehaviour
             {
                 //Last Call - Deactivate gameObject and last pop up
                 popUps[popUpIndex-1].SetActive(false);
-                tutorialFinished = true;
-                OnTutorialFinish?.Invoke();
-                this.enabled = false;
+                TutorialFinished();
             });
             StartCoroutine(coroutine);
         });
@@ -118,5 +124,12 @@ public class TutorialManager : MonoBehaviour
         //StopAllCoroutines();
         playerInput.OnShootPressed -= PlayerInput_OnShootPressed;
         playerInput.OnDashStarted -= PlayerInput_OnDashStarted;
+    }
+
+    private void TutorialFinished()
+    {
+        tutorialFinished = true;
+        OnTutorialFinish?.Invoke();
+        this.enabled = false;
     }
 }

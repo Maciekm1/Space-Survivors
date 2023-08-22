@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
+
 [DefaultExecutionOrder(-1)]
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
     // Movement
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float turnSpeed = 5f;
+    [SerializeField] private PlayerStats playerStats;
     private Vector2 inputVector;
 
     //Weapon
@@ -64,7 +67,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        
         inputVector = playerInput.GetMovementVector();
+
+
         if(isShooting)
         {
             current_weapon.Shoot();
@@ -73,9 +79,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Works well with moveSpeed:4, turnspeed:0.2, drag:0.95
-        Rb.AddForce(transform.up * inputVector.y * moveSpeed);
-        Rb.AddTorque(-inputVector.x * turnSpeed);
+
+    // Works well with moveSpeed:4, turnspeed:0.2, drag:0.95
+    Rb.AddForce(transform.up * inputVector.y * moveSpeed);
+    Rb.AddTorque(-inputVector.x * turnSpeed);
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

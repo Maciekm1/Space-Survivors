@@ -86,4 +86,6 @@ public class PlayerDash : MonoBehaviour
     public float GetDashChargesTimer() { return internalDashTimer; }
 
     public float GetDashChargesRecharge() { return dashRecharge; }
+
+    public void SetDashChargesRecharge(float newValue) {  dashRecharge = newValue; }
 }

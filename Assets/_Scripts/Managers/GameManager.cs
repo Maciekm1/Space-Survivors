@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public Action OnGameEnd;
 
     private float gameTime;
-    private bool gameOn = false;
+    public bool GameOn { get; private set; }
 
     private void Awake()
     {
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         uiManager = GetComponent<UIManager>();
         tutorialManager = GetComponent<TutorialManager>();
         spawner = GetComponent<EnemySpawner>();
+        GameOn = false;
     }
 
     private void OnEnable()
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
         gameTime = 0;
         uiManager.HideEndGameScreen();
 
-        gameOn = true;
+        GameOn = true;
         spawner.StartSpawning();
         playerController.ResetPlayer();
     }
@@ -53,14 +54,26 @@ public class GameManager : MonoBehaviour
     {
         uiManager.ShowEndGameScreen();
 
-        gameOn = false;
+        GameOn = false;
         spawner.StopSpawning();
         OnGameEnd?.Invoke();
     }
 
+    public void ResumeGame()
+    {
+        GameOn = true;
+        spawner.StartSpawning();
+    }
+
+    public void PauseGame()
+    {
+        GameOn = false;
+        spawner.StopSpawning();
+    }
+
     private void Update()
     {
-        if(gameOn)
+        if(GameOn)
         {
             gameTime += Time.deltaTime;
             uiManager.UpdateGameTime(gameTime);

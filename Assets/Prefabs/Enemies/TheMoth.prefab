@@ -46,14 +46,13 @@ GameObject:
   - component: {fileID: 6923317985033308796}
   - component: {fileID: 7289712084500053993}
   - component: {fileID: 7228847362159370157}
-  - component: {fileID: 9166298192081212651}
   m_Layer: 0
   m_Name: TheMoth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3714680288125761024
 Transform:
   m_ObjectHideFlags: 0
@@ -199,25 +198,10 @@ MonoBehaviour:
   projectilesSpawned: 1
   projectileSpawnCD: 5
   moveSpeedWhenHurt: 5
+  pooler: {fileID: 0}
   spawnProjState: {fileID: 11400000, guid: 39957d7fe97d60f42b7caea2d8d31539, type: 2}
   rechargeState: {fileID: 11400000, guid: d7afeb827b8ed2441824c28aba15243e, type: 2}
   spawnProjPos: {fileID: 2286803347197108726}
---- !u!114 &9166298192081212651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8027021796756935823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 008b4531edf5ee743861d6ea2aec6ef4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentName: TheMothProj
-  projectile: {fileID: 5564465475895275198, guid: 592f6cbd76bbace48af20ce73b246ad7, type: 3}
-  poolSize: 2
-  poolCanExpand: 1
 --- !u!1001 &7037350687032751134
 PrefabInstance:
   m_ObjectHideFlags: 0

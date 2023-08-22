@@ -21,10 +21,10 @@ public class EnemyTheMoth : Enemy, IFlippable
     protected override void Awake()
     {
         base.Awake();
-        pooler = GetComponent<ObjectPooler>();
         controller = GetComponent<AIStateController>();
         internalSpawnProjTimer = projectileSpawnCD;
         startState = controller.GetCurrentState();
+        pooler = GameObject.Find("ProjPoolMoth").GetComponent<ObjectPooler>();
     }
 
     protected override void Update()
@@ -72,7 +72,7 @@ public class EnemyTheMoth : Enemy, IFlippable
         //Animator.SetTrigger("SpawnProj");
         for (int i = 0; i < projectilesSpawned; i++)
         {
-            Projectile proj = pooler.GetProjectileFromPool().GetComponent<Projectile>();
+            Projectile proj = pooler.GetObjectFromPool().GetComponent<Projectile>();
             proj.gameObject.SetActive(true);
             proj.transform.SetPositionAndRotation(spawnProjPos.position, Quaternion.identity);
             proj.Shoot();
