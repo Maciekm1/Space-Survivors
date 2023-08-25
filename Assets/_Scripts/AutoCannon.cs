@@ -14,8 +14,9 @@ public class AutoCannon : PlayerWeapon
     private Animator animator;
     private float nextShootTime = 0f;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         animator = GetComponent<Animator>();
         canShoot = true;
     }

@@ -198,7 +198,6 @@ MonoBehaviour:
   projectilesSpawned: 1
   projectileSpawnCD: 5
   moveSpeedWhenHurt: 5
-  pooler: {fileID: 0}
   spawnProjState: {fileID: 11400000, guid: 39957d7fe97d60f42b7caea2d8d31539, type: 2}
   rechargeState: {fileID: 11400000, guid: d7afeb827b8ed2441824c28aba15243e, type: 2}
   spawnProjPos: {fileID: 2286803347197108726}

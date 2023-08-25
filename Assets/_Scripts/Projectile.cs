@@ -28,7 +28,7 @@ public abstract class Projectile : MonoBehaviour
         Rb = GetComponent<Rigidbody2D>();
         col = Rb.GetComponent<Collider2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        lifetimeEnd = projectileLifeTime;
+        lifetimeEnd = projectileLifeTime * PlayerController.Instance.GetPlayerStats().projectileLifeTimeMult;
     }
 
     protected virtual void Update()
@@ -56,7 +56,7 @@ public abstract class Projectile : MonoBehaviour
     {
         transform.SetPositionAndRotation(Vector2.zero, Quaternion.identity);
         Rb.velocity = Vector2.zero;
-        lifetimeEnd = projectileLifeTime;
+        lifetimeEnd = projectileLifeTime * PlayerController.Instance.GetPlayerStats().projectileLifeTimeMult;
     }
 
     public virtual void DestroyProjectile()

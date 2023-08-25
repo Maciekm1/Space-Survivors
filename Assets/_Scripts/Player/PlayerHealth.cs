@@ -10,6 +10,18 @@ public class PlayerHealth : Health
     [SerializeField] private float playerHealthLossMult = 1f;
     [SerializeField] private float playerShieldLossMult = 1f;
 
+    private PlayerController playerController;
+
+    protected override void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+        healthMax = playerController.GetPlayerStats().health;
+        shieldMax = playerController.GetPlayerStats().shield;
+        healthRegen = playerController.GetPlayerStats().healthRegen;
+        shieldRegen = playerController.GetPlayerStats().shieldRegen;
+        base.Awake();
+    }
+
     public override void LoseHealth(float amount) 
     {
         healthCurrent -= amount * playerHealthLossMult;

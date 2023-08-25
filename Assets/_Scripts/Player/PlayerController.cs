@@ -19,8 +19,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Collider2D col;
 
     // Movement
-    [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float turnSpeed = 5f;
+    private float moveSpeed;
+    private float turnSpeed;
     [SerializeField] private PlayerStats playerStats;
     private Vector2 inputVector;
 
@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
         PlayerHealth = GetComponent<PlayerHealth>();
         PlayerLevel = GetComponent<PlayerLevel>();
         PlayerDash = GetComponent<PlayerDash>();
+
+        moveSpeed = playerStats.moveSpeed;
+        turnSpeed = playerStats.rotationSpeed;
     }
 
     private void Start()
@@ -150,5 +153,16 @@ public class PlayerController : MonoBehaviour
     public CinemachineVirtualCamera GetCamera()
     {
         return cam;
+    }
+
+    public PlayerStats GetPlayerStats()
+    {
+        return playerStats;
+    }
+    
+    public void UpdateMoveAndRotationSpeed()
+    {
+        moveSpeed = playerStats.moveSpeed;
+        turnSpeed = playerStats.rotationSpeed;
     }
 }

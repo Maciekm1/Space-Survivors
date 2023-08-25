@@ -6,7 +6,6 @@ public abstract class PlayerWeapon : MonoBehaviour
 {
     protected const string SHOOT = "Shoot";
 
-    [SerializeField] protected float damageMultiplier;
     [SerializeField] protected float fireCoolDown;
     [SerializeField] protected float recoilStrength;
 
@@ -18,6 +17,17 @@ public abstract class PlayerWeapon : MonoBehaviour
     [SerializeField] protected float cameraAmp;
     [SerializeField] protected float cameraFreq;
     [SerializeField] protected float cameraShakeDuration;
+
+    protected virtual void Awake()
+    {
+
+    }
+
+    private void Start()
+    {
+        fireCoolDown /= PlayerController.Instance.GetPlayerStats().fireRateMult;
+        recoilStrength *= PlayerController.Instance.GetPlayerStats().weaponRecoilMult;
+    }
 
 
     public abstract void Shoot();

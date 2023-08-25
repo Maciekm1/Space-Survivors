@@ -8,10 +8,10 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private PlayerController playerController;
 
-    [SerializeField] private float dashForce;
-    [SerializeField] private int dashChargesMax;
+    private float dashForce;
+    private int dashChargesMax;
     private int dashCharges;
-    [SerializeField] private float dashRecharge;
+    private float dashRecharge;
     private float internalDashTimer;
     private bool isDashing;
 
@@ -24,6 +24,8 @@ public class PlayerDash : MonoBehaviour
 
     private void OnEnable()
     {
+        UpdateDashStats();
+
         animator = GetComponent<Animator>();
         playerInput.OnDashStarted += PlayerInput_OnDashStarted;
         dashCharges = dashChargesMax;
@@ -88,4 +90,11 @@ public class PlayerDash : MonoBehaviour
     public float GetDashChargesRecharge() { return dashRecharge; }
 
     public void SetDashChargesRecharge(float newValue) {  dashRecharge = newValue; }
+
+    public void UpdateDashStats()
+    {
+        dashForce = playerController.GetPlayerStats().dashForce;
+        dashChargesMax = playerController.GetPlayerStats().dashCharges;
+        dashRecharge = playerController.GetPlayerStats().dashRegen;
+    }
 }

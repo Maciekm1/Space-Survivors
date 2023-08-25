@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
 
     private void Health_OnLoseAllHealth()
     {
-        PlayerController.Instance.PlayerLevel.PlayerGainXP(ExperienceGiven);
+        PlayerController.Instance.PlayerLevel.PlayerGainXP(ExperienceGiven * PlayerController.Instance.GetPlayerStats().expGainMult);
         if (hasDeathAnim)
         {
             DeathStart();
@@ -85,10 +85,10 @@ public class Enemy : MonoBehaviour
         {
             if (proj.playerDamage)
             {
-                HealthComp.TakeDamage(1);
+                HealthComp.TakeDamage(proj.ProjectileDamage * PlayerController.Instance.GetPlayerStats().damagePerBulletMult);
 
                 //Knockback + visual
-                Rb.AddForce(proj.Rb.velocity * proj.ProjectileKnockback, ForceMode2D.Impulse);
+                Rb.AddForce(proj.Rb.velocity * proj.ProjectileKnockback * PlayerController.Instance.GetPlayerStats().projectileKnockBackMult, ForceMode2D.Impulse);
                 Flash.StartFlash(.08f, 1);
 
                 proj.DestroyProjectile();

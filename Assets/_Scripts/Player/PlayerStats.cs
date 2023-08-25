@@ -17,7 +17,7 @@ public class PlayerStats
     public float moveSpeed;
     public float rotationSpeed;
     public float dashForce;
-    public float dashCharges;
+    public int dashCharges;
     public float dashRegen;
 
     // Health and Shield
