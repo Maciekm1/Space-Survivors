@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   artwork: {fileID: 0}
   description: Reload like lightning
+  effectDescription: 25% faster fire rate
   statIncreases:
   - statType: 1
     increaseAmount: 0.25

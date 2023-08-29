@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   artwork: {fileID: 0}
   description: Aiming for stars, hitting everything else
+  effectDescription: +25% projectile damage
   statIncreases:
   - statType: 0
     increaseAmount: 0.25

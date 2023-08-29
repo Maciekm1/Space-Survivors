@@ -63,12 +63,14 @@ public class GameManager : MonoBehaviour
     {
         GameOn = true;
         spawner.StartSpawning();
+        Time.timeScale = 1f;
     }
 
     public void PauseGame()
     {
         GameOn = false;
         spawner.StopSpawning();
+        Time.timeScale = 0f;
     }
 
     private void Update()
@@ -78,5 +80,10 @@ public class GameManager : MonoBehaviour
             gameTime += Time.deltaTime;
             uiManager.UpdateGameTime(gameTime);
         }
+    }
+
+    public float getGameTime()
+    {
+        return gameTime;
     }
 }

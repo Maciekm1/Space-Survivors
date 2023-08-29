@@ -18,7 +18,7 @@ public class PlayerLevel : MonoBehaviour
 
     //Events
     private event Action OnXPGain;
-    private event Action OnLevelUp;
+    public event Action OnLevelUp;
 
     private void Awake()
     {

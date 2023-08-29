@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class CardHolder : MonoBehaviour
 {
-    List<Card> cardsChosen;
+    public static CardHolder Instance { get; private set; }
+
+    List<Card> cardsChosen = new List<Card>();
 
     private PlayerController playerController;
 
     private void Awake()
     {
+        Instance = this;
         playerController = GetComponent<PlayerController>();
     }
 
@@ -17,5 +20,10 @@ public class CardHolder : MonoBehaviour
     {
         card.ApplyEffect(playerController);
         cardsChosen.Add(card);
+    }
+
+    public List<Card> getCardsChosenList()
+    {
+        return cardsChosen;
     }
 }

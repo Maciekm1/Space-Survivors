@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: <MoveSpeed>k__BackingField
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5421460208405877993, guid: 833d049d9cabddb4e9fc29e02c110341, type: 3}
+      propertyPath: <ExperienceGiven>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

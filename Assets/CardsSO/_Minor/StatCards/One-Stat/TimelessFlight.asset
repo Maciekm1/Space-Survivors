@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   artwork: {fileID: 0}
   description: Bullets defy time
+  effectDescription: +25% projectile lifeTime
   statIncreases:
   - statType: 3
     increaseAmount: 0.25

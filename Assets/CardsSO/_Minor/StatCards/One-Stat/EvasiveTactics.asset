@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   artwork: {fileID: 0}
   description: Regenerating faster than my phone battery
+  effectDescription: 1 sec faster dash regen
   statIncreases:
   - statType: 10
     increaseAmount: -1

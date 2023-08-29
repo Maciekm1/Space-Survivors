@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   artwork: {fileID: 0}
   description: Eating spinach is so yesterday.
+  effectDescription: + 1 health regen
   statIncreases:
   - statType: 12
     increaseAmount: 1

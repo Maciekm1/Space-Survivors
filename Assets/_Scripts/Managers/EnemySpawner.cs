@@ -19,7 +19,6 @@ public class EnemySpawner : MonoBehaviour
     public float spawnIncreaseFactor = 0.98f;
 
     private float currentSpawnInterval;
-
     public void StartSpawning()
     {
         Reset();

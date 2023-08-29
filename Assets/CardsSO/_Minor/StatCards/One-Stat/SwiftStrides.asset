@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   artwork: {fileID: 0}
   description: Faster than the wind
+  effectDescription: +1 move Speed
   statIncreases:
   - statType: 6
     increaseAmount: 1

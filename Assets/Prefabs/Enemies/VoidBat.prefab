@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MoveSpeed>k__BackingField: 1.5
   <Damage>k__BackingField: 10
-  <ExperienceGiven>k__BackingField: 1
+  <ExperienceGiven>k__BackingField: 3
   <KnockbackForce>k__BackingField: 1
   hasDeathAnim: 1
   deathAnimationClip: {fileID: 7400000, guid: 259d3aefcf74a0a48b0ab6ab2da33be6, type: 2}

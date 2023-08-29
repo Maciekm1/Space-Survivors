@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   artwork: {fileID: 0}
   description: Tame the storm of recoil
+  effectDescription: 25% lower weapon recoil
   statIncreases:
   - statType: 5
     increaseAmount: 0.25

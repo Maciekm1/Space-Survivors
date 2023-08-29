@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   artwork: {fileID: 0}
   description: Dash so fast, even time is impressed
+  effectDescription: + 200 Dash Force
   statIncreases:
   - statType: 8
     increaseAmount: 200

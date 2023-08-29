@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   artwork: {fileID: 0}
   description: Unseen swiftness in every step
+  effectDescription: +1 Dash Charge
   statIncreases:
   - statType: 9
     increaseAmount: 1

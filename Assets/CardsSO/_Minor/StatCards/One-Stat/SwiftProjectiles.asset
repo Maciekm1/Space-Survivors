@@ -16,6 +16,7 @@ MonoBehaviour:
   type: 0
   artwork: {fileID: 0}
   description: Projectiles faster than thought
+  effectDescription: +25% projectile speed
   statIncreases:
   - statType: 2
     increaseAmount: 0.25
